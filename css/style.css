@@ -168,7 +168,10 @@ footer{
   position: absolute;
   bottom: 0;
 }
-
+footer p{
+  font-size: 1.2em;
+  text-align: center;
+}
 
 
 @media screen and (max-width: 932px) {
