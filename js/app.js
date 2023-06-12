@@ -43,10 +43,10 @@ const fetchShortenerUrl = async (e) => {
   if (data) {
     showResponse();
     urlShortened.textContent = data.data.tiny_url;
+    inputUrlValue.value = "";
     return;
   }
 
-  inputUrlValue.value = "";
 };
 
 
