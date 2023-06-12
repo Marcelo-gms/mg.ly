@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #35363a;
+  
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  transition: 0.5s;
+  background-color: #5ccb5f;
+  color: #fff;
+
+  height: 30px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+button:hover {
+  background-color: #006414;
+}
+
+i {
+  transition: 0.5s;
+  font-size: 1.5em;
+}
+h1{
+  transition: all 0.5s;
+}
+
+
+.center-content {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1:hover,
+.socail-media i:hover {
+  color: #8713fa;
+}
+.logo h1 {
+  margin: 0;
+}
+
+.socail-media {
+  display: flex;
+  gap: 20px;
+}
+
+
+.container-main {
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "texto texto"
+    "form container"
+    "anuncio anuncio";
+}
+
+.conatiner-text {
+  text-align: center;
+  grid-area: texto;
+  padding: 20px 10px;
+}
+.conatiner-text p {
+  font-size: 1.3em;
+}
+.conatiner-text p a{
+  font-weight: 500;
+}
+
+#formUrl {
+  grid-area: form;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+#formUrl label {
+  display: flex;
+  flex-direction: column;
+  
+}
+label {
+  font-size: 1.3em;
+}
+#formUrl input {
+  height: 30px;
+  font-size: 1.2em;
+  width: 60%;
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 0 5px;
+  
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  grid-area: container;
+}
+.hide{
+  opacity: 0;
+}
+.show{
+  animation: showRes 0.5s forwards;
+}
+
+@keyframes showRes {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.container-anuncio {
+  grid-area: anuncio;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30px;
+  background-color: #35363a;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+}
+
+
+
+@media screen and (max-width: 932px) {
+  i {
+    font-size: 1.3em;
+  }
+  .container-main {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "texto texto"
+      "form form"
+      "container container"
+      "anuncio anuncio";
+  }
+
+  .conatiner-text p {
+    font-size: 1.3em;
+  }
+
+  #formUrl {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    padding: 20px;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    margin-top: 20px;
+    padding: 20px;
+  }
+}
+
