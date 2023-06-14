@@ -20,9 +20,7 @@ button {
   transition: 0.5s;
   background-color: #5ccb5f;
   color: #fff;
-
   height: 30px;
-  border: 1px solid #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,6 +46,7 @@ h1{
   min-height: 100vh;
   overflow: hidden;
   position: relative;
+  padding-bottom: 50px;
 }
 
 header {
@@ -56,6 +55,11 @@ header {
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header span{
+  font-size: 1.5em;
+  font-weight: 700;
 }
 
 h1:hover,
@@ -76,35 +80,40 @@ h1:hover,
   width: 100%;
   padding: 10px;
   display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
-    "texto texto"
-    "form container"
-    "anuncio anuncio";
+    "texto anuncio"
+    "form anuncio"
+    "container anuncio";
 }
 
 .conatiner-text {
-  text-align: center;
+  text-align: start;
   grid-area: texto;
-  padding: 20px 10px;
+  padding: 20px 10px 0 50px;
+  overflow: hidden;
+}
+
+.conatiner-text h1 {
+  font-size: 1.5em;
 }
 .conatiner-text p {
-  font-size: 1.3em;
+  font-size: 1.1em;
 }
-.conatiner-text p a{
+.conatiner-text p span{
   font-weight: 500;
 }
 
 #formUrl {
+  
   grid-area: form;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 10px;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 10px 50px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
 
 }
 #formUrl label {
@@ -113,30 +122,65 @@ h1:hover,
   
 }
 label {
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 #formUrl input {
-  height: 30px;
+  height: 50px;
   font-size: 1.2em;
   width: 60%;
   outline: none;
-  border: 1px solid #ccc;
   padding: 0 5px;
-  
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 20px 0px 0px 20px;
+  margin-left: 10px;
+}
+#formUrl button{
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0px 20px 20px 0;
+  height: 50px;
+
 }
 .container {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
+  padding: 20px 50px;
+  margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
   grid-area: container;
 }
-.hide{
-  opacity: 0;
+
+.container-shortened{
+  width: 100%;
+  display: flex;
+  
 }
+.container-shortened h3{
+  width: 60%;
+  height: 50px ;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 20px 0px 0px 20px;
+  display: flex;
+  align-items: center;
+}
+.container-shortened button{
+  padding: 5px 10px;
+  height: 50px ;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0px 20px 20px 0;
+}
+/* .hide{
+  opacity: 0;
+} */
 .show{
   animation: showRes 0.5s forwards;
 }
@@ -167,6 +211,7 @@ footer{
   color: #fff;
   position: absolute;
   bottom: 0;
+  
 }
 footer p{
   font-size: 1.2em;
@@ -180,6 +225,7 @@ footer p{
   }
   .container-main {
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-areas:
       "texto texto"
       "form form"
@@ -192,14 +238,29 @@ footer p{
   }
 
   #formUrl {
+    padding: 0;
     flex-direction: column;
     justify-content: flex-start;
     align-items: start;
-    padding: 20px;
+    padding: 10px;
+    gap: 10px;
   }
 
+  #formUrl label{
+    font-size: 1.3em;
+  }
   #formUrl input{
+    border: 1px solid #ccc;
+    border-radius: 5px;
     width: 100%;
+    height: 40px;
+    margin: 0;
+  }
+  #formUrl button{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 40px;
+
   }
 
   .container {
@@ -209,9 +270,39 @@ footer p{
     margin-top: 20px;
     padding: 20px;
   }
+  .container-shortened {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .container-shortened h3{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    margin: 0;
+  }
+  
+  .container-shortened button {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 40px;
+  }
 }
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 490px){
+  .conatiner-text{
+    padding: 0;
+  }
+  .conatiner-text p{
+    font-size: 1em;
+  }
+  .conatiner-text p span{
+    font-size: 0.90em;
+  }
+  .container-shortened h3{
+    font-size: 1em;
+  }
 footer p{
   font-size: 1em;
 }
